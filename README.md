@@ -1,6 +1,6 @@
 # challenge_wild_series
 
-Challenge 01
+# Challenge 01
 
 Homepage Wireframe & Style Guide
 
@@ -26,7 +26,7 @@ Le wireframe de la page d’accueil est présent
 Le styleguide comporte à minima une palette de couleurs et une typographie
 
 
-Challenge 02
+# Challenge 02
 
 Initialisation du projet Wild Series
 Le défi est simple :
@@ -45,3 +45,29 @@ Critères de validation
 - Ton code devra être disponible sur un repository Github.
 
 Attention : Ton repository Github doit être public pour que les correcteurs puissent y accéder.
+
+
+# Challenge 03
+La page d'accueil de ton site
+Lors des étapes tu as créé la page d'index de tes séries.
+Mais qu’en est-il de ta page d'accueil ?
+
+Crée un nouveau contrôleur DefaultController
+
+Crée une méthode index() et une route en annotation nommée app_index qui devra répondre à une requête sur l'url / (la page par défaut de ton site finalement).
+
+Elle devra afficher un titre <h1> contenant "Bienvenue !" grâce à un template Twig nommé index.html.twig à la racine, qui étendra base.html.twig. Pour le moment, ne pense pas au CSS, tu t’en chargeras lors d’une prochaine quête !
+
+Critères de validation
+
+Il y a un fichier DefaultController.php dans src/Controller de l'arborescence.
+
+Ce fichier comporte une classe DefaultController et étend le AbstractController de base de Symfony.
+
+La route sur / est faite en annotation et est nommée app_index.
+
+Le méthode index() du contrôleur se finit par un return $this->render('path_vers_un_twig');.
+
+Le fichier Twig index.html.twig étend base.html.twig et comprend un titre h1 "Bienvenue sur Wild Series".
+
+L'URL http://localhost:8000/ est fonctionnelle et le titre s'affiche.
