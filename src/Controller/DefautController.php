@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class DefautController extends AbstractController
 {
     /**
-     * @Route("/app_index")
+     * @Route("/")
      */
     public function index() : Response
     {
