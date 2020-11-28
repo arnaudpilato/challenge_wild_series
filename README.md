@@ -111,7 +111,7 @@ Critères de validation
 
 Crée ta propre route
 
-- Crée une route /programs/{id}/ permettant de charger une vue affichant l'id du programme sous forme de titre, dans une balise <h1>.
+- Crée une route /programs/{id}/ permettant de charger une vue affichant l'id du programme sous forme de titre, dans une balise h1.
 - Le paramètre id doit être un entier.
 - Si l'id n'est pas un entier, la route devra renvoyer une erreur 404 (utilise les requirements de paramètres).
 - La route devra être reliée à une méthode show du ProgramController.
@@ -123,6 +123,6 @@ Critères de validation
 - La classe ProgramController est annotée de manière à ce que toutes les routes de ce controller soient préfixées par /programs/ et leur name préfixé par program_.
 - Une vue templates/program/show.html.twig est créée.
 - Le résultat correspond aux attentes :
-- La route /programs/4 affiche bien une vue avec en titre "Program 4" dans un <h1>.
+- La route /programs/4 affiche bien une vue avec en titre Program 4 dans un h1.
 - La route /programs/quatre n'affiche rien (erreur 404) car le paramètre n'est pas un entier.
 - La route n'est accessible qu'en GET. Tu peux tester qu'un POST sur ta route te retourne bien une 404 en exécutant la commande suivante dans ton terminal.
