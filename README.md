@@ -120,7 +120,7 @@ Crée ta propre route
 Critères de validation
 
 - La route est correctement définie, en annotations, et est reliée à la méthode show() de ProgramController.
-- La classe ProgramController est annotée de manière à ce que toutes les routes de ce controller soient préfixées par /programs/ et leur name préfixé par "program_".
+- La classe ProgramController est annotée de manière à ce que toutes les routes de ce controller soient préfixées par /programs/ et leur name préfixé par program_.
 - Une vue templates/program/show.html.twig est créée.
 - Le résultat correspond aux attentes :
 - La route /programs/4 affiche bien une vue avec en titre "Program 4" dans un <h1>.
