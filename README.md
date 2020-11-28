@@ -116,7 +116,7 @@ Crée ta propre route
 - Si l'id n'est pas un entier, la route devra renvoyer une erreur 404 (utilise les requirements de paramètres).
 - La route devra être reliée à une méthode show du ProgramController.
 - La route ne devra être accessible qu'en GET.
-  
+
 Critères de validation
 
 - La route est correctement définie, en annotations, et est reliée à la méthode show() de ProgramController.
