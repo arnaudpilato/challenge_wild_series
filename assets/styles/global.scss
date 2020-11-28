@@ -3,6 +3,16 @@
 $primary-color: #264653;
 $secondary-color: #F4A261;
 
+$theme-colors: (
+        "primary": $primary-color,
+        "secondary": $secondary-color
+);
+
+.navbar {
+  background-color: $primary-color;
+  color: $secondary-color;
+}
+
 // customize some Bootstrap variables
 $primary: darken(#428bca, 20%);
 
