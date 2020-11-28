@@ -106,3 +106,23 @@ Critères de validation
 - Bootstrap et JQuery sont bien chargés dans tes pages (regarde les sources HTML et vérifie que tu n'as pas de 404 sur tes fichiers dans l'inspecteur > "Réseau").
 
 - La navbar de Bootstrap s'affiche correctement sur tes pages
+
+# Challenge 05
+
+Crée ta propre route
+
+- Crée une route /programs/{id}/ permettant de charger une vue affichant l'id du programme sous forme de titre, dans une balise <h1>.
+- Le paramètre id doit être un entier.
+- Si l'id n'est pas un entier, la route devra renvoyer une erreur 404 (utilise les requirements de paramètres).
+- La route devra être reliée à une méthode show du ProgramController.
+- La route ne devra être accessible qu'en GET.
+  
+Critères de validation
+
+- La route est correctement définie, en annotations, et est reliée à la méthode show() de ProgramController.
+- La classe ProgramController est annotée de manière à ce que toutes les routes de ce controller soient préfixées par /programs/ et leur name préfixé par "program_".
+- Une vue templates/program/show.html.twig est créée.
+- Le résultat correspond aux attentes :
+- La route /programs/4 affiche bien une vue avec en titre "Program 4" dans un <h1>.
+- La route /programs/quatre n'affiche rien (erreur 404) car le paramètre n'est pas un entier.
+- La route n'est accessible qu'en GET. Tu peux tester qu'un POST sur ta route te retourne bien une 404 en exécutant la commande suivante dans ton terminal.
