@@ -126,3 +126,29 @@ Critères de validation
 - La route /programs/4 affiche bien une vue avec en titre Program 4 dans un h1.
 - La route /programs/quatre n'affiche rien (erreur 404) car le paramètre n'est pas un entier.
 - La route n'est accessible qu'en GET. Tu peux tester qu'un POST sur ta route te retourne bien une 404 en exécutant la commande suivante dans ton terminal.
+
+# Challenge 06
+
+- Crée les entités Category et Program (sans liaison)
+- Crée deux entités Category et Program.
+
+- Category
+id : integer (Clé primaire)
+name : string (Obligatoire, valeur max 100).
+
+- Program
+id : integer (Clé primaire)
+title : string (Obligatoire)
+summary : text (Obligatoire)
+poster : string (Facultative)
+
+Pour le moment ces deux entités ne sont pas liées.
+Tu dois également mettre à jour ta base de données en conséquence.
+
+Critères de validation
+
+- Pour la correction de cette quête, dans un premier temps récupère le travail de ton camarade Wilder à corriger depuis son dépôt Gihub, Ensuite, configure le fichier .env.local comme il se doit, mais en précissant pour nom de base de données wild-series_NOM_Prenom_du_wilder_à_corriger. Enfin, suis les étapes suivantes de validations :
+- Lance la commande d’execution des classes de migrations. Attention ! Pas la commande de générations des classes !, Tu as un message de succès à la fin de la migration.
+- Lance la commande doctrine:mapping:info, le résultat affiche bien les deux entités Category et Program.
+- Lance la commande doctrine:schema:validate, le résultat affiche bien OK pour le mapping ET la base de données.
+- Ton code est disponible sur un repository GitHub
