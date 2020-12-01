@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <ul>
+        <li>{{ category.name }}</li>
+    </ul>
+    {% for program in programs %}
+        <h2>{{ program.id }} - {{ program.title }}</h2>
+        <p>{{ program.summary }}</p>
+    {% else %}
+        Aucune série trouvée
+    {% endfor %}
+{% endblock %}

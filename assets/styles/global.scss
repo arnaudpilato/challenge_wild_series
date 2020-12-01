@@ -1,20 +1,9 @@
 // assets/styles/global.scss
 
-$primary-color: #264653;
-$secondary-color: #F4A261;
-
-$theme-colors: (
-        "primary": $primary-color,
-        "secondary": $secondary-color
-);
-
-.navbar {
-  background-color: $primary-color;
-  color: $secondary-color;
-}
 
 // customize some Bootstrap variables
-$primary: darken(#428bca, 20%);
+$primary: #264653;
+$secondary: #F4A261;
 
 // the ~ allows you to reference things in node_modules
 @import "~bootstrap/scss/bootstrap";
