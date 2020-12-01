@@ -152,3 +152,42 @@ Critères de validation
 - Lance la commande doctrine:mapping:info, le résultat affiche bien les deux entités Category et Program.
 - Lance la commande doctrine:schema:validate, le résultat affiche bien OK pour le mapping ET la base de données.
 - Ton code est disponible sur un repository GitHub
+
+# Challenge 08
+
+findBy() : récupérer plusieurs objets avec des filtres
+Tu as utilisé pour le moment les méthodes findAll() et findOneBy().
+Il est temps pour toi de mettre en pratique la méthode findBy(). Le principe reste identique à la méthode findOneBy(), mais au lieu de récupérer strictement un seul tuple, tu en récupères plusieurs en fonction de paramètres donnés.
+
+Objectif : Afficher les séries appartenant à une catégorie donnée.
+Liste toutes les catégories
+
+- Crée un nouveau fichier CategoryController.php qui contiendra la classe du même nom.
+- toutes les routes de cette classes seront préfixées par /categories et leur nom par category_
+- Crée une méthode index() (route = /categories/, route_name = category_index)
+cette méthode récupère toutes les catégories présentes en base de données et les transmettra à une vue templates/category/index.html.twig.
+- Crée une vue templates/category/index.html.twig qui affiche la liste des catégories que tu viens de récupérer.
+- Affiche les programmes d'une catégorie
+
+- Dans ta classe CategoryController crée une méthode show(string $categoryName) (route = /categories/{categoryName}, route_name = category_show)
+- Dans un premier temps, cette méthode récupère l'objet Category dont le nom est passé en paramètre.
+- Si aucune catégorie avec ce nom n'est présente en base, retourne une erreur 404.
+- Si une catégorie existe, cette méthode récupère toutes les séries présentes en base de données qui appartiennent à cette catégorie.
+- Au maximum, 3 séries devront être récupérées, ordonnées par ID décroissant.
+- Ces séries seront transmises à une vue templates/category/show.html.twig
+- Crée une vue templates/category/show.html.twig qui affiche la liste des séries que tu viens de récupérer :
+- Tu dois afficher l'ID de la série, son titre et son résumé.
+- Si aucune série n'est présente dans la catégorie, affiche un message "Aucune série trouvée".
+- Pour chaque série, ajoute un lien pour pouvoir visualiser sa fiche (tu peux t'aider de ce que tu à fait précédemment lors du cours de la quête dans la vue program/index.html.twig)
+- Enfin, depuis la liste des catégories dans ta vue category/index.html.twig ajoute un lien vers la fiche de chaque Category.
+
+Critères de validation
+
+- Un nouveau contrôleur CategoryController a été créé.
+- Il contient 2 méthodes : index() et show(string $categoryName)
+- Lorsqu'on se rend sur l'URL /categories/, la liste des catégories apparaît.
+- Si je clique sur une catégorie je suis redirigé vers la fiche de cette catégorie (l'URL : /categories/horreur par exemple.)
+- Cette page affiche la liste des 3 dernières séries appartenant à la catégorie Horreur avec pour chacune, son ID, son titre et son résumé.
+- Si je clique sur le titre d'une série je suis redirigé vers sa fiche.
+- Si je tente d'accéder à la fiche d'une catégorie qui n'existe pas, j'obtiens une erreur 404 (exemple: /categories/Trucmuche => 404 : "Aucune catégorie nommée TrucMuche")
+- Le code est disponible sur un repository GitHub, avec une branche correspondant à cette quête.
