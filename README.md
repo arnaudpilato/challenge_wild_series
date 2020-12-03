@@ -191,3 +191,51 @@ Critères de validation
 - Si je clique sur le titre d'une série je suis redirigé vers sa fiche.
 - Si je tente d'accéder à la fiche d'une catégorie qui n'existe pas, j'obtiens une erreur 404 (exemple: /categories/Trucmuche => 404 : "Aucune catégorie nommée TrucMuche")
 - Le code est disponible sur un repository GitHub, avec une branche correspondant à cette quête.
+
+# Challenge 09
+
+C'est meilleur quand c'est de saison
+À partir de l’extrait du modèle logique ci-dessous, créer les relations bidirectionnelles entre les entités Program, Season et Episode.
+
+Attention
+Ce challenge va te prendre un petit plus de temps que lors de la plupart des quêtes précédentes. Cela est nécessaire pour construire le socle de ta future application, et pouvoir travailler sur les différents autres concepts de Symfony.
+
+N’oublie pas, qui dit modification des entités, dit migrations !
+
+Pour pouvoir tester cette fonctionnalité et valider cette quête, tu dois créer en BDD plusieurs épisodes (une dizaine) et plusieurs saisons (environ 3) associées aux séries déjà existantes.
+
+Tu peux le faire soit via le terminal, phpMyAdmin, DBeaver, Workbench, PhpStorm ou tout autre outil que tu préférerais.Ce n’est pas sur la qualité du contenu que tu vas être jugé. Mais si tu sèches et que tu tiens à utiliser du contenu cohérent, n’hésite pas à aller sur imdb
+
+- Dans la méthode show(int $id) de la classe ProgramController, récupère le Program en question grâce à l'id passé dans l’url.
+- Récupère ensuite toutes les saisons du programme.
+- Passe les saisons que tu viens de récupérer en contexte à ta vue program/show.html.twig.
+- Dans la vue, affiche la liste des saisons disponibles avec un lien qui permet d'aller vers la page détaillée de la saison (tu implémenteras cette page dans la suite du challenge, l'URL sera de la forme : /programs/{programId}/season/{seasonId}).
+- Dans la classe ProgramController, crée une méthode showSeason(int $programId, int $seasonId)
+- La route de cette méthode sera donc de la forme /programs/{programId}/seasons/{seasonId} et le nom de la route sera program_season_show
+- Récupère le Program qui correspond à l'identifiant du programme passé en paramètre dans l'URL
+- Récupère la Season du programme qui correspond à l'identifiant de la saison passé en paramètre.
+- Cette méthode retournera une nouvelle vue : templates/program/season_show.html.twig.
+- Dans cette vue nouvellement créée, affiche les informations du programme et de la saison sélectionnée.
+- Tu dois également afficher la liste des épisodes de la saison. Opte pour la méthode qui te convient le mieux afin d'obtenir le résultat suivant (bien sûr l'apparence variera en fonction de ton styleguide) :
+
+Pour simplifier la correction
+À partir de maintenant, reprendre le code de ses camarades pour le faire fonctionner sur son poste peut s'avérer long et fastidieux.Tout le monde n’en est pas au même niveau sur les quêtes. Ce qui implique que la base de données dont tu disposes en local n’est pas forcément en phase avec les besoins de l’application que tu t'apprêtes à corriger.
+Pour pallier cela, tu vas devoir faire une capture vidéo de l'utilisation de ton application. Tu peux utiliser https://www.loom.com/ ou toute autre application que tu pourrais trouver ici Best Screen recording software. Le principal est que la vidéo soit accessible à tout le monde et que la user story de cette quête (la partie fonctionnelle du challenge) y soit démontrée depuis ta version en local.
+
+Critères de validation
+
+- Le code est disponible sur un repository GitHub, avec une branche correspondant à cette quête.
+- Un lien vidéo est présent sur un fichier README.md à la racine du projet.
+- Sur la vidéo, l’utilisateur navigue de séries en saisons
+- Sur la page d'une série on voit bien la liste des saisons de la série
+- Lorsqu'on clique sur une saison on est redirigé vers la page de la saison
+- Sur la page d'une saison on voit bien la liste des épisodes de la saison
+- Les deux classes Season et Episode sont présentes.
+- Les annotations inversedBy et mappedBy sont présentes dans toutes les relations
+- Les méthodes addProgram() et removeProgram() sont présentes dans l'entité Category, comme présenté dans la quête
+- Les méthodes addSeason(), removeSeason() et getSeasons()sont présentes dans l'entité Program, comme demandé dans le challenge
+- Les méthodes addEpisode(), removeEpisode() et getEpisodes()sont présentes dans l'entité Season, comme demandé dans le challenge
+- Les méthodes getProgram() et setProgram()sont présentes dans l'entité Season, comme demandé dans le challenge
+- Les méthodes getSeason() et setSeason()sont présentes dans l'entité Episode, comme demandé dans le challenge
+
+https://www.loom.com/share/2f2d8cc291554475a2ff89544376b979
