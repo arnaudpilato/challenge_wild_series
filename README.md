@@ -287,3 +287,5 @@ Critères de validation
 - La méthode showEpisode() rend une vue affichant le nom de la série, la saison, ainsi que les informations de l'épisode.
 - Le code est disponible sur un repository GitHub, avec une branche correspondant à cette quête.
 - La fonctionnalité est démontrée via une vidéo dont le lien est ajouté au README.md
+
+https://www.loom.com/share/d095d23fe6424ec4aa54c1847a53c56f
