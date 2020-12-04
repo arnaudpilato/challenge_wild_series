@@ -258,3 +258,32 @@ Critères de validation
 - Les méthodes getSeason() et setSeason()sont présentes dans l'entité Episode, comme demandé dans le challenge
 
 https://www.loom.com/share/2f2d8cc291554475a2ff89544376b979
+
+# Challenge 10
+
+Utilise un param converter
+Pour ton projet Wild Séries, reprends ta classe ProgramController.
+
+- Modifie la méthode show()(route = "program_show") pour récupérer l'objet Program directement depuis les paramètres de la méthode grâce au param converter (modifie le typage de ton paramètre).
+- Modifie la méthode showSeason()(route = "program_season_show") pour récupérer les objets Program et Season directement depuis les paramètres de la méthode grâce au param converter (modifie le typage de tes paramètres).
+- Crée une méthode showEpisode(Program $program, Season $season, Episode $episode)
+
+La route de cette méthode sera donc de la forme /programs/{programId}/seasons/{seasonId}/episodes/{episodeId} et le nom de la route sera program_episode_show
+Récupère les objets Program, Season et Episode directement depuis les paramètres de la méthode grâce au param converter
+Cette méthode retournera une nouvelle vue : templates/program/episode_show.html.twig.
+
+Cette vue affichera :
+- le nom de la série
+- le numéro de la saison
+- le numéro et le titre de l'épisode
+- le résumé de l'épisode
+- Sur la page de détail d'une saison, ajoute un lien sur chaque épisode afin de pouvoir accéder à sa fiche.
+
+Critères de validation
+
+- Dans ProgramController, la méthode show() permet de récupérer l'objet program via le param converter, à partir de l’id en paramètre de la route
+- Dans ProgramController, la méthode showSeason() permet de récupérer les objets program et season via le param converter, à partir de l’id en paramètre de la route
+- Dans ProgramController, la méthode showEpisode() permet de récupérer les objets program, season et episode via le param converter, à partir de l’id en paramètre de la route
+- La méthode showEpisode() rend une vue affichant le nom de la série, la saison, ainsi que les informations de l'épisode.
+- Le code est disponible sur un repository GitHub, avec une branche correspondant à cette quête.
+- La fonctionnalité est démontrée via une vidéo dont le lien est ajouté au README.md
