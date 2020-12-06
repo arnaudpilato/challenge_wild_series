@@ -289,3 +289,37 @@ Critères de validation
 - La fonctionnalité est démontrée via une vidéo dont le lien est ajouté au README.md
 
 https://www.loom.com/share/d095d23fe6424ec4aa54c1847a53c56f
+
+# Challenge 11
+Créer des catégories & des séries
+Si tu as bien suivi la quête, l'étape 1 est normalement déjà réalisée.
+
+- Tu dois créer une page contenant un formulaire qui permet d’ajouter une catégorie à la base de données en précisant uniquement son nom.
+À partir des ressources citées plus haut, à toi de définir dans le CategoryController existant une méthode new().
+- Celle-ci utilise une vue contenant un formulaire permettant de saisir les informations à fournir pour créer une nouvelle catégorie.
+- À la soumission du formulaire, les données saisies sont enregistrées en base de données.
+- Fais de même dans ton ProgramController existant afin de pouvoir ajouter une série.
+
+Tu remarques en te rendant sur l'url /programs/new que tu rencontres une erreur :
+Object of class App\Entity\Category could not be converted to string.
+C'est normal, Symfony, par défaut, essaie d'afficher un string pour la propriété $category de notre Program, hors il ne s'agit pas d'un string mais bien d'un objet Category.
+Il va falloir modifier le FormType du champ category dans notre ProgramType en lui spécifiant la propriété de Category qui va servir de label dans notre liste déroulante (ici name) :
+->add('category', null, ['choice_label' => 'name'])
+En indiquant null Symfony va choisir automatiquement le bon type pour le champ en fonction des annotations définies dans ton entité Program (dans notre cas, il s'agit d'un ManyToOne vers Category, il va donc choisir une liste déroulante qui affichera la propriété name en tant que label).
+Tu auras des explications approfondies et des exemples plus complexes lors d'une prochaine quête.
+
+- Enregistre une démo de ta fonctionnalité et met le lien dans README.md
+- Partage le tout sur une nouvelle branche ton dépôt github.
+
+Critères de validation
+
+- La classe App\Form\CategoryType est présente dans le dossier src/Form.
+- La route /categories/new affiche bien le formulaire de création de catégorie.
+- Le formulaire fonctionne (il crée une catégorie).
+- La classe App\Form\ProgramType est présente dans le dossier src/Form.
+- La route /programs/new affiche bien le formulaire de création de série.
+- Le formulaire fonctionne (il crée une série dans la catégorie sélectionnée).
+- Le code est disponible sur un repository GitHub, avec une branche correspondant à cette quête.
+- La fonctionnalité est démontrée via une vidéo dont le lien est ajouté au README.md
+
+https://www.loom.com/share/ceaa9259e1e6431e956492aa36f9ab43
