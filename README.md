@@ -323,3 +323,35 @@ Critères de validation
 - La fonctionnalité est démontrée via une vidéo dont le lien est ajouté au README.md
 
 https://www.loom.com/share/ceaa9259e1e6431e956492aa36f9ab43
+
+# Challenge 12
+Du CRUD ! Du CRUD ! Du CRUD !
+
+Génère les CRUD pour les entity Season et Episode.
+
+Puis enregistre les manipulations suivantes :
+
+- Crée plusieurs saisons (au moins 4)
+- Affiche toutes les saisons
+- Modifie plusieurs saisons (au moins 2)
+- Efface plusieurs saisons (au moins 2)
+- Crée plusieurs épisodes (au moins 4)
+- Affiche tous les épisodes
+- Modifie plusieurs épisodes (au moins 2)
+- Efface plusieurs épisodes (au moins 2)
+
+Tu peux penser que les méthodes show() du SeasonController et EpisodeController font doublon avec les méthodes showSeason() et showEpisode() créées dans le ProgramController lors de quêtes précédentes et c'est bien légitime.
+Cependant, et tu le verras plus tard, les CRUDs nouvellement générés seront exclusivement réservés à l'administration de ton site, et, par conséquent, les pages liées aux CRUDs ne seront pas visibles par un visiteur contrairement aux routes showSeason() et showEpisode().
+
+Critères de validation
+
+- Le CRUD est généré pour l’entité Season.
+- L’entité Season dispose des actions de lecture, écriture et suppression.
+- Le CRUD est généré pour l’entité Episode.
+- L’entité Episode dispose des actions de lecture, écriture et suppression.
+- Les routes sont cohérentes et fonctionnelles.
+- Le CRUD agit bien avec la BDD (exemple : insérer une saison depuis http://localhost:8000/season/new).
+- Le code est disponible sur un repository GitHub, avec une branche correspondant à cette quête.
+- La fonctionnalité est démontrée via une vidéo dont le lien est ajouté au README.md
+
+https://www.loom.com/share/f800da195e9145b186dafa8f6137dfab
