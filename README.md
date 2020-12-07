@@ -413,9 +413,9 @@ Ensuite, reprends la page de détail d'une série, disponible à l'url programs/
 <strong>Acteurs :</strong>
 <ul>
     {% for actor in program.actors %}
-        <li>{{ actor.name }} </li>
+        \<li>{{ actor.name }} </li>
     {% else %}
-        <li>Aucun acteur pour cette série</li>
+        \<li>Aucun acteur pour cette série</li>
     {% endfor %}
 </ul>
 
