@@ -372,7 +372,7 @@ Ton formulaire d’ajout de programme doit effectuer les vérifications de valid
 Poste une branche "validation" sur ton repository Github et prends une vidéo montrant le bon fonctionnement de ces validations (dans lequel on verra les messages d’erreur appropriés s’afficher) et poste un lien vers la vidéo dans le README.
 
 Critères de validation
-Pour tester les cas d’erreur côté serveur, il faut enlever les attributs bloquants dans le HTML du formulaire (les maxLength et autre required) ou utiliser l’attribut « novalidate » sur la balise form afin de "forcer" l’erreur. Utilise la console du navigateur pour faire cela 😉
+Pour tester les cas d’erreur côté serveur, il faut enlever les attributs bloquants dans le HTML du formulaire (les maxLength et autre required) ou utiliser l’attribut « novalidate » sur la balise form afin de "forcer" l’erreur. Utilise la console du navigateur pour faire cela
 
 - Une erreur appropriée apparaît au niveau de ton formulaire si un titre vide ou un titre supérieur à 255 caractères est envoyé au serveur.
 - Le message "ce titre existe déjà" doit apparaître dans ton formulaire, si le titre saisi existe déjà pour une autre série
