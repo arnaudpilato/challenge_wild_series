@@ -381,3 +381,56 @@ Pour tester les cas d’erreur côté serveur, il faut enlever les attributs blo
 - Le code est disponible sur Github et un lien vers une vidéo montre le bon fonctionnement des validations.
 
 https://www.loom.com/share/33f38742ebef42628239613a41f37891
+
+# Challenge 14
+
+Affichage des acteurs jouant dans une série
+Peut-être que tu as eu le réflexe de le faire, mais dans les consignes précédentes, tu n'as pas encore impacté la création de tes entités sur la base de données. Je te laisse retrouver les commandes de migration qui te permettent de le faire.
+
+Une fois ta base de données à jour, insert en SQL de nouveaux acteurs, par exemple :
+
+- symfony console doctrine:query:sql 'INSERT INTO `actor` (`name`) VALUES ("Andrew Lincoln");'
+- symfony console doctrine:query:sql 'INSERT INTO `actor` (`name`) VALUES ("Norman Reedus") ;'
+- symfony console doctrine:query:sql 'INSERT INTO `actor` (`name`) VALUES ("Lauren Cohan") ;'
+- symfony console doctrine:query:sql 'INSERT INTO `actor` (`name`) VALUES ("Danai Gurira") ;'
+
+- Toujours depuis ton serveur MySQL, associe tes séries à plusieurs acteurs. N'oublie pas, on est sur une relation ManyToMany.
+Si tu as ajouté les séries proposées lors des quêtes précédentes, prends note que ces 4 acteurs jouent dans Walking Dead et que Andrew Lincoln joue aussi dans Fear The Walking Dead.
+
+Tu vas maintenant devoir mobiliser tes compétences fraîchement acquises :
+
+Crée une page répondant à l'appel de la route /actor/{id} et affichant les informations suivantes :
+
+- Le nom de l’acteur,
+- La liste des séries associées à cet acteur.
+
+Que l’on soit en OneToMany ou en ManyToMany ne change en rien la manière de faire, vue jusqu’à présent.
+
+Pour cela, tu vas évidemment créer une classe "ActorController", avec une méthode "show". 😏
+
+Ensuite, reprends la page de détail d'une série, disponible à l'url programs/{id} et ajoute en bas de ta vue le code suivant :
+
+<strong>Acteurs :</strong>
+<ul>
+    {% for actor in program.actors %}
+        <li>{{ actor.name }} </li>
+    {% else %}
+        <li>Aucun acteur pour cette série</li>
+    {% endfor %}
+</ul>
+
+Ça fonctionne ?!? Pourtant, à aucun moment tu n’as récupéré les acteurs depuis le contrôleur ! C’est normal ! Car depuis Twig, en appelant program.actors, tu fais l’équivalent en PHP de $program->getActors(). Ce qui te donne le tableau des acteurs associés à la série. Pas besoin de le faire au niveau du contrôleur.
+
+Critères de validation
+
+- Le code est disponible sur un repository GitHub, avec une branche correspondant à cette quête.
+- Ton entité App\Entity\Actor est bien présente,
+- Ta classe de migration générant les 2 nouvelles tables et les contraintes d'intégrité fonctionnent,
+- La route vers la page /actor/{id} est fonctionnelle,
+- Sur la page d’un acteur, la liste des séries associées s'affiche.
+- Sur la page d’une série, la liste des acteurs associés s'affiche.
+- Sur la page de l’acteur, lors du clic sur une série de la liste, l'utilisateur est redirigé vers la page de la série sélectionnée.
+- Sur la page d’une série, lors du clic sur un acteur de la liste, l'utilisateur est redirigé vers la page de l’artiste sélectionné.
+- L'ensemble des fonctionnalités ci-dessus sont démontrées via une vidéo dont le lien est ajouté au README.md
+
+https://www.loom.com/share/3a45d29cc8af440d9b45ac8d3079db0d
