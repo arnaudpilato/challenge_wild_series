@@ -355,3 +355,29 @@ Critères de validation
 - La fonctionnalité est démontrée via une vidéo dont le lien est ajouté au README.md
 
 https://www.loom.com/share/f800da195e9145b186dafa8f6137dfab
+
+# Challenge 13
+
+Validation d’une série
+Dans la quête, tu as vu des exemples pour configurer une validation sur les catégories. Maintenant, il faut que tu prennes le reflexe d’ajouter systématiquement des contraintes de validation sur tous les champs de toutes tes entités qui en ont besoin.
+Dans le cadre du challenge, tu vas configurer ton entité Program afin qu’elle suive ces règles simples de validation :
+
+- le champ title ne doit pas être vide et doit faire moins de 255 caractères
+- le champ title doit être unique. Si le titre existe déjà en base de données, le message "ce titre existe déjà" doit apparaître. Regarde du côté de la contrainte UniqueEntity (qui a la particularité de se configurer au niveau de la classe et non d’une propriété)
+- le champ summary (synopsis de la série) ne doit pas être vide
+- Bonus! le champ summary ne doit pas contenir la chaîne "plus belle la vie", sinon le message d’erreur "On parle de vraies séries ici" apparaît. Regarde en détail les options de la contrainte "Regex" pour t’aider.
+
+Ton formulaire d’ajout de programme doit effectuer les vérifications de validation. S’il y a des erreurs, les messages correspondants doivent s’afficher.
+
+Poste une branche "validation" sur ton repository Github et prends une vidéo montrant le bon fonctionnement de ces validations (dans lequel on verra les messages d’erreur appropriés s’afficher) et poste un lien vers la vidéo dans le README.
+
+Critères de validation
+Pour tester les cas d’erreur côté serveur, il faut enlever les attributs bloquants dans le HTML du formulaire (les maxLength et autre required) ou utiliser l’attribut « novalidate » sur la balise form afin de "forcer" l’erreur. Utilise la console du navigateur pour faire cela 😉
+
+- Une erreur appropriée apparaît au niveau de ton formulaire si un titre vide ou un titre supérieur à 255 caractères est envoyé au serveur.
+- Le message "ce titre existe déjà" doit apparaître dans ton formulaire, si le titre saisi existe déjà pour une autre série
+- Une erreur appropriée apparaît au niveau de ton formulaire si un synopsis vide est envoyé au serveur.
+- Bonus! si le summary de la série contient le texte "plus belle la vie", le message d’erreur "On parle de vraies séries ici" apparaît à la place.
+- Le code est disponible sur Github et un lien vers une vidéo montre le bon fonctionnement des validations.
+
+https://www.loom.com/share/33f38742ebef42628239613a41f37891
