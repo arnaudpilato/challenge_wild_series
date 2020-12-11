@@ -5,15 +5,26 @@
 {% endblock %}
 
 {% block body %}
-    <h1>Liste des séries :</h1><br>
+    <section class="index">
+    <h1>Liste des séries</h1>
+    <div class="container"></div>
+    <div class="row justify-content-around">
     {% for program in programs %}
-        <div>
-            <h2>{{ loop.index }} / {{ program.title }} - Catégorie : {{ program.category.name }}</h2>
-            <p>{{ program.summary }}</p>
+        <div class="movie col-5 d-flex">
+            <div class="poster col-6">
+                <img class="poster" src="{{ program.poster }}">
+            </div>
+            <div class="col-6">
+                <h2>{{ loop.index }} / {{ program.title }}</h2>
+                <p>Catégorie : {{ program.category.name }}</p>
+                <p>{{ program.summary }}</p>
+                <a class="btn btn-secondary" href="{{ path("program_show", { id: program.id }) }}">Voir la fiche</a><br>
+            </div>
         </div>
-        <a href="{{ path("program_show", { id: program.id }) }}">Voir la fiche</a><br>
     {% else %}
         Aucune série trouvée.
     {% endfor %}
-    <a href="{{ path('app_index') }}">Retour à l'accueil</a>
+    </div>
+    <a class="btn btn-secondary" href="{{ path('app_index') }}">Retour à l'accueil</a>
+    </section>
 {% endblock %}

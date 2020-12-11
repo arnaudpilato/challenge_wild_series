@@ -78,7 +78,7 @@ class ProgramController extends AbstractController
     }
 
     /**
-     * @Route("/{program}/season/{season}", name="season_show")
+     * @Route("/{program}/season/{season}", requirements={"program"="\d+", "season"="\d+"}, methods={"GET"}, name="season_show")
      * @param Program $program
      * @param Season $season
      * @return Response
