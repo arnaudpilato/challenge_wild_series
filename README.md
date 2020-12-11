@@ -434,3 +434,21 @@ Critères de validation
 - L'ensemble des fonctionnalités ci-dessus sont démontrées via une vidéo dont le lien est ajouté au README.md
 
 https://www.loom.com/share/3a45d29cc8af440d9b45ac8d3079db0d
+
+# Challenge 15
+
+- Ajoute un champ Actors
+
+En suivant les instructions de la quête, fais en sorte que le champ actors apparaisse sous forme d’une suite de cases à cocher sur le formulaire d’ajout d’une nouvelle série.
+Il doit afficher les noms des acteurs contenus dans la base.
+
+Critères de validation
+
+- Le formulaire d’ajout d’une série affiche un champ acteur (EntityType),
+- Ce champ apparaît sous la forme de cases à cocher.
+- Lorsque l’on ajoute un acteur à une série, celui-ci est bien relié à la série en BDD.
+- Les acteurs s'affichent sur la page de la série.
+- Le code est disponible sur un repository GitHub, avec une branche correspondant à cette quête.
+- La fonctionnalité est démontrée via une vidéo dont le lien est ajouté au README.md
+
+https://www.loom.com/share/a5a047298534414c86266959e381f052
