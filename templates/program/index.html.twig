@@ -15,10 +15,12 @@
                 <img class="poster" src="{{ program.poster }}">
             </div>
             <div class="col-6">
-                <h2>{{ loop.index }} / {{ program.title }}</h2>
+                <h2>{{ program.title }}</h2>
                 <p>Catégorie : {{ program.category.name }}</p>
                 <p>{{ program.summary }}</p>
-                <a class="btn btn-secondary" href="{{ path("program_show", { id: program.id }) }}">Voir la fiche</a><br>
+                <div class="button">
+                    <a class="btn btn-secondary" href="{{ path("program_show", { slug: program.slug }) }}">Voir la fiche</a>
+                </div>
             </div>
         </div>
     {% else %}

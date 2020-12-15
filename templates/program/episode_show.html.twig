@@ -5,6 +5,6 @@
         <h1>{{ program.title }} - Saison {{ season.id }} - Episode {{ episode.number }}</h1>
         <h2>{{ episode.title }}</h2>
         <p>{{ episode.synopsis }}</p><br>
-        <a href="{{ path('program_season_show', {program: program.id, season: season.id}) }}">Retour sur la saison {{ season.id }}</a>
+        <a href="{{ path('program_season_show', {slug: program.slug, season: season.id}) }}">Retour sur la saison {{ season.id }}</a>
     </div>
 {% endblock %}
