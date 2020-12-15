@@ -452,3 +452,25 @@ Critères de validation
 - La fonctionnalité est démontrée via une vidéo dont le lien est ajouté au README.md
 
 https://www.loom.com/share/a5a047298534414c86266959e381f052
+
+# Challenge 16
+
+Alimente ton Wild Séries d'un grand nombre d’informations.
+Dans cette quête, tu vas devoir nourrir ton Wild Séries d'un grand nombre d’acteurs répartis dans différentes séries.
+Ces séries seront de différentes catégories et comporteront différents épisodes répartis dans plusieurs saisons.
+Pour cela, tu peux implémenter Faker. Grâce à ce dernier, génère 50 acteurs fictifs.
+
+Dans cette quête, fais apparaître dans la vidéo l'exécution des fixtures avant la navigation sur ton application.
+
+Critères de validation
+
+- Lorsque php bin/console doctrine:fixtures:load est exécuté, il n y a pas de message d'erreur
+- Les fixtures génèrent de nombreux acteurs répartis dans toutes les séries existantes en base (en plus des acteurs créés à la main)
+- Les fixtures génèrent de nombreuses saisons (à l’aide de Faker) réparties dans toutes les séries existantes en base
+- Les fixtures génèrent de nombreux épisodes (à l’aide de Faker) répartis dans les saisons existantes
+- Les noms des catégories sont définis "à la main" dans la classe App\DataFixtures\CategoryFixtures
+- Les séries sont définies "à la main" dans la classe App\DataFixtures\ProgramFixtures
+- Le code est disponible sur un repository GitHub, avec une branche correspondant à cette quête
+- La fonctionnalité est démontrée via une vidéo dont le lien est ajouté au README.md
+
+https://www.loom.com/share/9391d4248cfc429387df6f5bab437e12
