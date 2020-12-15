@@ -474,3 +474,44 @@ Critères de validation
 - La fonctionnalité est démontrée via une vidéo dont le lien est ajouté au README.md
 
 https://www.loom.com/share/9391d4248cfc429387df6f5bab437e12
+
+# Challenge 17
+Appeler la génération du Slug
+Dans ce challenge, tu dois compléter l'algorithme de la méthode generate() afin que tous les caractères spéciaux soient traités :
+
+- à, ç, etc. deviennent a, c, etc.;
+- !, apostrophes et autres ponctuations sont supprimées;
+- les espaces en début et fin de chaînes sont supprimées;
+- il ne peut pas contenur plusieurs - (tirets) successifs;
+- la chaîne générée est en minuscules
+- ....
+
+Une fois que l'algo de ton service est complet, fais en sorte que celui-ci soit utilisé à toutes les étapes du cycle de vie de tes entités:
+
+Program :
+- Lors de l'ajout d'une série depuis un formulaire,
+- Lors de l'ajout d'une série depuis les fixtures,
+Episode :
+- Lors de l'ajout d'un épisode depuis un formulaire,
+- Lors de l'ajout d'un épisode depuis les fixtures,
+- Lors de l'édition d'un épisode.
+Pour cela, il faut bien évidemment ajouter un champ slug sur les entités qui le nécessitent.
+
+Une fois tes slugs générés, modifie tes routes de contrôleurs afin qu'elle n'utilisent plus l'id de la ressource pour y accéder mais le slug (grâce au ParamConverter).
+
+Par exemple :
+- GET /programs/walking-dead : affiche la fiche de la série Walking Dead
+- GET|POST /episode/days-gone-by/edit : édition de l'épisode 1 de la saison 1 de Walking Dead
+- ...etc
+
+Critères de validation
+
+- Les entités Program, Episode comportent un champ slug
+- Les routes des différents contrôleurs relatifs aux séries et épisodes utilisent les slugs plutôt que les id.
+- Le service est appelé à chaque niveau de l’application où il y a un ajout de série.
+- Le service est appelé à chaque niveau de l’application où il y a un ajout/modification d’un épisode.
+- Le service Slugify créé auparavant avec une méthode generate(), permet de générer un slug à partir d'une chaîne de caractères selon les critères définis plus haut.
+- Le code est disponible sur un repository GitHub, avec une branche correspondant à cette quête.
+- La fonctionnalité est démontrée via une vidéo dont le lien est ajouté au README.md
+
+https://www.loom.com/share/e7f7f295a8714a768bdae9ffbf857e03
