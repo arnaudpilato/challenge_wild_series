@@ -1,0 +1,10 @@
+{% extends 'layoutEmail.html.twig' %}
+
+{% block body %}
+    <section style="background-color: #264653; border-radius: 8px" class="email">
+        <h1 style="color:#F4A261;">Un nouvel épisode {{ episode.title }} est maintenant disponible</h1>
+        <p style="color:#F4A261;">Bonjour, l'épisode n°{{ episode.number}} {{ episode.title }} de la saison {{ episode.season.number }} de {{ episode.season.program.title}} est désormait disponible sur  Wild Series</p>
+        <p style="color:#F4A261;">Synopsis : {{episode.synopsis }}
+        <p><a style="color:#F4A261; border-radius: 8px; background: #264653; text-decoration: none;" href="http://127.0.0.1:8000/programs/{{episode.season.program.slug}}/seasons/{{ episode.season.id }}/episodes/{{ episode.slug }}">Voir l'épisode</a></p>
+    </section>
+{% endblock %}
