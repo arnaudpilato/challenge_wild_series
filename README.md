@@ -515,3 +515,20 @@ Critères de validation
 - La fonctionnalité est démontrée via une vidéo dont le lien est ajouté au README.md
 
 https://www.loom.com/share/e7f7f295a8714a768bdae9ffbf857e03
+
+# Challenge 18
+
+Un nouvel épisode a été créé.
+Un email est envoyé pour chaque nouvelle série ajoutée à Wild Series. Tu vas maintenant mettre en place un envoi d'email pour chaque nouvel épisode ajouté.
+
+De plus, puisque tu as deux emails différents envoyés, tu vas créer un layout Twig dédié aux emails (comme évoqué précédemment dans la quête) et faire en sorte que les deux templates d'email etendent ce layout.
+
+Critères de validation
+
+- Le mail du destinataire (administrateur) est issu d'une variable d'environnement,
+- Le contenu des mails envoyés reprend l'apparence générale de l'application, à l'aide d'un layout de mail général et se trouve dans une vue Twig.
+- Le contenu du mail indique le nom/numéro du nouvel épisode, le nom de la série rattachée, ainsi qu'un lien vers la page épisodes de cette série.
+- Le code est disponible sur un repository GitHub, avec une branche correspondant à cette quête.
+- La fonctionnalité est démontrée via une vidéo dont le lien est ajouté au README.md
+
+https://www.loom.com/share/01b2cb00c7a94aca95e4c082a4e8476e
