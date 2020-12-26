@@ -1,5 +1,9 @@
 @import 'variables.scss';
 
+body {
+    padding-left: 30px;
+}
+
 .navbar {
     position: fixed;
     box-shadow: $box-shadow;
@@ -83,5 +87,9 @@ p {
 
 a {
     color: $secondary;
+}
+
+section {
+    margin-top: 80px;
 }
 
