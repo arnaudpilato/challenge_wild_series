@@ -6,27 +6,30 @@
 
 {% block body %}
     <section class="index">
-    <h1>Liste des séries</h1>
-    <div class="container"></div>
-    <div class="row justify-content-around">
-    {% for program in programs %}
-        <div class="movie col-5 d-flex">
-            <div class="poster col-6">
-                <img class="poster" src="{{ program.poster }}">
-            </div>
-            <div class="col-6">
-                <h2>{{ program.title }}</h2>
-                <p>Catégorie : {{ program.category.name }}</p>
-                <p>{{ program.summary }}</p>
-                <div class="button">
-                    <a class="btn btn-secondary" href="{{ path("program_show", { slug: program.slug }) }}">Voir la fiche</a>
+        <h1>Liste des séries</h1>
+        <div class="container"></div>
+        <div class="row justify-content-around">
+            {% for program in programs %}
+                <div class="movie col-5 d-flex">
+                    <div class="poster col-6">
+                        <img class="poster" src="{{ program.poster }}">
+                    </div>
+                    <div class="col-6">
+                        <h2>{{ program.title }}</h2>
+                        <p>Catégorie : {{ program.category.name }}</p>
+                        <p>{{ program.summary }}</p>
+                        <div class="button">
+                            <a class="btn btn-secondary" href="{{ path("program_show", { slug: program.slug }) }}">Voir la fiche</a>
+                        </div>
+                        {% if is_granted("ROLE_ADMIN") %}
+                        <a href="{{ path('program_edit', { 'slug': program.slug} ) }}">Éditer</a>
+                        {%endif%}
+                    </div>
                 </div>
-            </div>
+            {% else %}
+                Aucune série trouvée.
+            {% endfor %}
         </div>
-    {% else %}
-        Aucune série trouvée.
-    {% endfor %}
-    </div>
-    <a class="btn btn-secondary" href="{{ path('app_index') }}">Retour à l'accueil</a>
+        <a class="btn btn-secondary" href="{{ path('app_index') }}">Retour à l'accueil</a>
     </section>
 {% endblock %}

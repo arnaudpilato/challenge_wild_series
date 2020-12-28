@@ -10,6 +10,11 @@
             <p>User : {{ comment.author.email }}</p>
             <p>Note : {{ comment.rate }}/ 10</p>
             <p>Commentaire : {{ comment.comment }}</p>
+            {% if app.user %}
+                {% if is_granted("ROLE_ADMIN") or app.user.email == comment.author.email %}
+                    {{ include('program/_delete_comment.html.twig') }}
+                {% endif %}
+            {% endif %}
             <hr>
         {% endfor %}
         {% if app.user %}
