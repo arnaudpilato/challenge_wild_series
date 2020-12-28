@@ -563,3 +563,32 @@ Critères de validation
 - La fonctionnalité est démontrée via une vidéo dont le lien est ajouté au README.md.
 
 https://www.loom.com/share/bc0097079d314f1cba252336708efd14
+
+# Challenge 20
+
+Gestion des utilisateurs et de leurs rôles.
+Lors de cette quête, tu as vu comment sécuriser la création de catégories et la création et l'édition de séries.
+
+L'objectif du challenge est de sécuriser la partie "commentaires" ajoutée lors de la quête précédente selon les critères suivants :
+
+- Un utilisateur non connecté ne peut, ni créer de commentaires, ni les supprimer.
+- Les contributeurs/administrateurs peuvent poster un commentaire.
+- Les administrateurs peuvent supprimer n'importe quel commentaire.
+- Les contributeurs ne peuvent supprimer que les commentaires dont ils sont l'auteur.
+
+Afin d'afficher/masquer certains éléments de ta vue en fonction de l'utilisateur connecté ou non (comme le formulaire pour poster un commentaire, bouton de suppression ... par exemple), rappelle toi de ce que tu as vu lors de cette quête et la précédente :
+
+en twig :
+- {{ app.user }} pour accéder à l'utilisateur courant et le comparer à l'auteur du commentaire.
+- {{ is_granted("ROLE_ADMIN") }} pour vérifier le rôle de l'utilisateur.
+
+Critères de validation
+
+- Un utilisateur reconnu comme "anonymous" ne peut pas poster de commentaire.
+- Un utilisateur reconnu comme "contributeur" peut poster un commentaire.
+- Un utilisateur reconnu comme ”contributeur” ne peut supprimer un commentaire que s’il est lui-même l’auteur.
+- Un utilisateur reconnu comme "administrateur" peut poster un commentaire et supprimer n'importe quel commentaire.
+- Le code est disponible sur un repository GitHub, avec une branche correspondant à cette quête.
+- La fonctionnalité est démontrée via une vidéo dont le lien est ajouté au README.md
+
+https://www.loom.com/share/b50bf011945047e796d041d8ddffac58
