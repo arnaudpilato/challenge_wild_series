@@ -532,3 +532,34 @@ Critères de validation
 - La fonctionnalité est démontrée via une vidéo dont le lien est ajouté au README.md
 
 https://www.loom.com/share/01b2cb00c7a94aca95e4c082a4e8476e
+
+# Challenge 19
+
+Gestion des commentaires utilisateurs
+Sur la page détail d’un épisode, tu dois ajouter la fonctionnalité “Laisser un commentaire”
+
+À l’aide des compétences acquises jusqu’à présent, crée une entité Comment correspondant au fragment de modèle ci-dessous. Lors de la création de la relation avec l’entité User, ne choisis pas l’option par défaut, mais nomme explicitement ton champ author plutôt que user.
+
+Tu peux constater que, dans le cadre d’une relation vers une entité donnée, tu n’es pas obligé de nommer la propriété correspondante de manière rigoureusement identique. Ainsi, la propriété “author” pointe vers l’entité “User”. Cela permet d’ajouter du sens à une relation. Cela permet aussi d’éviter les confusions quand une table est liée 2 fois à la même table. Par exemple, un commentaire sur Blablacar est relié 2 fois à la table user : 1 fois pour le chauffeur, une fois pour le passager.Evidemment, tu n’auras pas oublié d’effectuer la migration en deux temps avec bin/console make:migration, suivi de bin/console doctrine:migrations:migrate.
+
+Ensuite, tu dois réaliser les fonctionnalités suivantes :
+
+- Si un utilisateur est non connecté sur une page détail d’un épisode, la fonctionnalité “Ajouter un commentaire” n’est pas visible.
+- Si un utilisateur est connecté sur une page détail d’un épisode, la fonctionnalité “Ajouter un commentaire” devient visible avec un formulaire composé d’un champ rate, d’un champ comment et d’un bouton de soumission.
+- Lorsqu’un commentaire est ajouté par un utilisateur, celui-ci est bien enregistré comme auteur de celui-ci.
+- Lorsqu’un commentaire est ajouté par un utilisateur, celui-ci est bien associé à l’épisode affiché.
+- La liste des commentaires liés à la série est affichée dans l’ordre chronologique.
+
+Tu l’auras compris, la relation entre le commentaire et l’épisode, ainsi que celle entre le commentaire et l’auteur, sont à faire du côté du contrôleur.
+
+Critères de validation
+
+- le formulaire de login est fonctionnel ;
+- le lien de déconnexion est fonctionnel ;
+- lorsque tu rédiges un commentaire, l’auteur actuellement connecté est bien associé en base de données ;
+- lorsque tu rédiges un commentaire, la série est bien associée en base de données ;
+- Les commentaires liés à l’épisode sont affichés dans l’ordre du plus vieux au plus récent ;
+- Le code est disponible sur un repository GitHub, avec une branche correspondant à cette quête ;
+- La fonctionnalité est démontrée via une vidéo dont le lien est ajouté au README.md.
+
+https://www.loom.com/share/bc0097079d314f1cba252336708efd14
