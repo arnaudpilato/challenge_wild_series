@@ -592,3 +592,30 @@ Critères de validation
 - La fonctionnalité est démontrée via une vidéo dont le lien est ajouté au README.md
 
 https://www.loom.com/share/b50bf011945047e796d041d8ddffac58
+
+# Challenge 21
+
+Un peu de ménage !
+Attention
+Cette partie là va te demander de puiser dans tes connaissance que tu as acquises jusqu’à présent.
+
+Alors oui, c’est super pratique tout ce qui se génère tout seul ! Mais on est d’accord que le code généré n’est pas non plus hyper propre !
+
+Comme tu aimes les bonnes pratiques, et qu’à force tu es devenu un peu maniaque (ce qui arrive à des gens très très bien !) peut-être as-tu envie de réaménager tout ça. Par exemple en déplaçant la seule méthode register() de ton nouveau controller dans App\Controller\SecurityController. Écoute tes pulsions et fais-le ! Idem pour la vue : trouve lui un meilleur emplacement :)
+Par contre, soit attentif aux chemins de fichiers qui changent et aux références qui pourraient ne plus être bonnes.
+De plus, la vue générée est minimaliste en terme de style, prend donc un peu le temps pour rendre la page un peu plus jolie.
+
+Critères de validation
+
+Sur la vidéo, il est démontré :
+- L’accès au formulaire d’inscription, en mode “déconnecté” uniquement, via un lien dans le menu “Se connecter”
+- La création du compte via le formulaire, en saisissant les informations,
+- L’affichage de la page d’accueil avec les dernières séries listées,
+- L’accès à la page “Mon compte” via le menu du site en lieu et place de “Se connecter”,
+- L’affichage de la page profile à l’url http://localhost:8000/my-profile.
+
+Sur le dépôt, il est constaté que :
+- La méthode register() est bien dans App\Controller\SecurityController,
+- La vue register.html.twig est bien dans templates/security
+
+https://www.loom.com/share/5b246379264d47f48df2f2a94df9847d
