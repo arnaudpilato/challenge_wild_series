@@ -633,3 +633,18 @@ Critères de validation
 - Un lien vidéo est présent sur un fichier README.md à la racine du projet.
 
 https://www.loom.com/share/18f6c8209e904f59a6aec52b4ca65a90
+
+# Challenge 23
+
+Configure les messages flash sur ton Wild Series
+Le challenge est simple. Une fois l’affichage des messages flash configuré dans ton fichier base.html.twig, fais en sorte d’ajouter un message de type “success” pour tous les ajouts ou éditions de série, saison ou épisode. De plus, ajoute un message de type “danger” qui indiquera qu'une série, saison ou épisode a bien été supprimé(e).
+
+Critères de validation
+
+- L’affichage des messages flash est correctement configuré dans le fichier base.html.twig
+- L’ajout et l’édition d’une série, saison ou épisode affichent un message flash vert (reprenant le style de la classe “alert-success” de Bootstrap) pour confirmer la réussite de la modification.
+- La suppression d’une série, saison ou épisode affiche un message flash rouge (reprenant le style de la classe “alert-danger” de Bootstrap) pour confirmer la réussite de la suppression.
+- Le code est disponible sur un repository GitHub, avec une branche correspondant à cette quête.
+- La fonctionnalité est démontrée via une vidéo dont le lien est ajouté au README.md
+
+https://www.loom.com/share/863a61f634a842f9bc078f3457e72fcf
