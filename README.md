@@ -619,3 +619,17 @@ Sur le dépôt, il est constaté que :
 - La vue register.html.twig est bien dans templates/security
 
 https://www.loom.com/share/5b246379264d47f48df2f2a94df9847d
+
+# Challenge 22
+
+Filtres avancés
+Maintenant que tu sais comment créer des requêtes personnalisées, tu vas améliorer ton formulaire de recherche. Fais en sorte que la recherche trouve non seulement des Program par leur titre, mais également par le nom de famille d'un acteur jouant dans celle-ci (tu pourras t'aider de join() et orWhere()).
+
+Critères de validation
+
+- La requête récupére des séries par leur titre ou le nom de famille d'un acteur
+- La requête utilise le QueryBuilder
+- Le code est disponible sur un repository GitHub, avec une branche correspondant à cette quête.
+- Un lien vidéo est présent sur un fichier README.md à la racine du projet.
+
+https://www.loom.com/share/18f6c8209e904f59a6aec52b4ca65a90
