@@ -60,6 +60,8 @@ class EpisodeController extends AbstractController
 
             $mailer->send($email);
 
+            $this->addFlash('success', 'Votre épisode a bien été ajouté');
+
             return $this->redirectToRoute('episode_index');
         }
 
@@ -119,6 +121,8 @@ class EpisodeController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($episode);
             $entityManager->flush();
+
+            $this->addFlash('danger', "L'épisode à été supprimé");
         }
 
         return $this->redirectToRoute('episode_index');
