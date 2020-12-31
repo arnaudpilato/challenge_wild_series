@@ -1,39 +1,47 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    {{ encore_entry_link_tags('program') }}
+{% endblock %}
+
 {% block title %}
-    All programs
+    Liste des programmes
 {% endblock %}
 
 {% block body %}
-    <section class="index">
-        <h1>Liste des séries</h1>
-        {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <button>Search</button>
-        {{ form_end(form) }}
-        <div class="container"></div>
-        <div class="row justify-content-around">
-            {% for program in programs %}
-                <div class="movie col-5 d-flex">
-                    <div class="poster col-6">
-                        <img class="poster" src="{{ program.poster }}">
-                    </div>
-                    <div class="col-6">
-                        <h2>{{ program.title }}</h2>
-                        <p>Catégorie : {{ program.category.name }}</p>
-                        <p>{{ program.summary }}</p>
-                        <div class="button">
-                            <a class="btn btn-secondary" href="{{ path("program_show", { slug: program.slug }) }}">Voir la fiche</a>
+    <div class="index">
+        <div class="">
+            <h1>Liste des séries</h1>
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button>Search</button>
+            {{ form_end(form) }}
+            <div class="row justify-content-around">
+                {% for program in programs %}
+                    <div class="movie col-5 d-flex">
+                        <div class="poster col-6">
+                            <img class="poster" src="{{ program.poster }}">
                         </div>
-                        {% if is_granted("ROLE_ADMIN") %}
-                        <a href="{{ path('program_edit', { 'slug': program.slug} ) }}">Éditer</a>
-                        {%endif%}
+                        <div class="col-6">
+                            <h2>{{ program.title }}</h2>
+                            <p>Catégorie : {{ program.category.name }}</p>
+                            {% if app.user %}
+                                <i id="watchlistIcon" class="watchlist {{ app.user.isInWatchlist(program) ? 'fas' : 'far' }} fa-heart"></i>
+                            {% endif %}
+                            <p>{{ program.summary }}</p>
+                            <div class="button">
+                                <a class="btn btn-secondary" href="{{ path("program_show", { slug: program.slug }) }}">Voir la fiche</a>
+                            </div>
+                            {% if is_granted("ROLE_ADMIN") %}
+                                <a href="{{ path('program_edit', { 'slug': program.slug} ) }}">Éditer</a>
+                            {%endif%}
+                        </div>
                     </div>
-                </div>
-            {% else %}
-                Aucune série trouvée.
-            {% endfor %}
+                {% else %}
+                    Aucune série trouvée.
+                {% endfor %}
+            </div>
+            <a class="btn btn-secondary" href="{{ path('app_index') }}">Retour à l'accueil</a>
         </div>
-        <a class="btn btn-secondary" href="{{ path('app_index') }}">Retour à l'accueil</a>
-    </section>
+    </div>
 {% endblock %}

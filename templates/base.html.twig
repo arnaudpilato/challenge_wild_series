@@ -3,30 +3,33 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Bienvenue!{% endblock %}</title>
         <link rel="icon" type="image/png" href="{{ asset('build/favicon.png') }}" />
+        <script src="https://kit.fontawesome.com/fed12f4e3a.js" crossorigin="anonymous"></script>
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
     </head>
     <body>
-    <header>
-        {% include '/include/_navbar.html.twig' %}
-    </header>
-    <section>
-        {% for category, messages in app.flashes %}
-            {% for message in messages %}
-                <div class="alert alert-{{ category }}">
-                    {{ message }}
-                </div>
+        <header>
+            {% include '/include/_navbar.html.twig' %}
+        </header>
+        <section>
+            {% for category, messages in app.flashes %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
             {% endfor %}
-        {% endfor %}
-    </section>
 
-        {% block body %}{% endblock %}
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-        <img src="{{ asset('build/path_to_image.png') }}" alt=""/>
+            {% block body %}{% endblock %}
+
+            {% block javascripts %}
+                {{ encore_entry_script_tags('app') }}
+            {% endblock %}
+
+            <img src="{{ asset('build/path_to_image.png') }}" alt=""/>
+        </section>
     </body>
 </html>

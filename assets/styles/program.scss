@@ -1,0 +1,21 @@
+@import "variables.scss";
+@import "app.scss";
+
+.index .poster {
+  padding-left: 0;
+  border-radius: 8px 0 0 8px;
+  height: 100%;
+  width: 100%;
+}
+
+.index .movie {
+  border: 2px solid black;
+  border-radius: 8px;
+  margin: 50px 0;
+  padding-left: 0;
+  box-shadow: $box-shadow;
+}
+
+.index .button {
+  text-align: center;
+}
