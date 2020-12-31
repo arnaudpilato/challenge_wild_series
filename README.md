@@ -648,3 +648,19 @@ Critères de validation
 - La fonctionnalité est démontrée via une vidéo dont le lien est ajouté au README.md
 
 https://www.loom.com/share/863a61f634a842f9bc078f3457e72fcf
+
+# Challenge 24
+
+Ajout à la "Wishlist"
+
+Le code réalisé lors de cette quête est fonctionnel. Tu peux ainsi permettre à un utilisateur, depuis la page descriptive d'une série, de l'ajouter / retirer de sa wishlist. C'était déjà un challenge en soi. Réalise une vidéo à partir de ton projet pour partager ta réussite ;)
+
+Critères de validation
+
+- L'ajout à la watchlist sur la page de détails fonctionne,
+- La page ne se recharge pas lors du clic sur le cœur,
+- Si la page est rafraîchie manuellement, le cœur garde son état plein/vide,
+- Le code est disponible sur un repository GitHub, avec une branche correspondant à cette quête.
+- La fonctionnalité est démontrée via une vidéo dont le lien est ajouté au README.md.
+
+https://www.loom.com/share/7177dc2fd73f47948de51e79e2f22e72
