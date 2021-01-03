@@ -5,16 +5,16 @@
 {% endblock %}
 
 {% block title %}
-    Liste des programmes
+    {{ 'programs'|trans }}
 {% endblock %}
 
 {% block body %}
     <div class="index">
         <div class="">
-            <h1>Liste des séries</h1>
+            <h1>{{'programs'|trans}}</h1>
             {{ form_start(form) }}
             {{ form_widget(form) }}
-            <button>Search</button>
+            <button>{{ 'search'|trans }}</button>
             {{ form_end(form) }}
             <div class="row justify-content-around">
                 {% for program in programs %}
@@ -24,24 +24,24 @@
                         </div>
                         <div class="col-6">
                             <h2>{{ program.title }}</h2>
-                            <p>Catégorie : {{ program.category.name }}</p>
+                            <p>{{'categorie'|trans}} : {{ program.category.name }}</p>
                             {% if app.user %}
                                 <i id="watchlistIcon" class="watchlist {{ app.user.isInWatchlist(program) ? 'fas' : 'far' }} fa-heart"></i>
                             {% endif %}
                             <p>{{ program.summary }}</p>
                             <div class="button">
-                                <a class="btn btn-secondary" href="{{ path("program_show", { slug: program.slug }) }}">Voir la fiche</a>
+                                <a class="btn btn-secondary" href="{{ path("program_show", { slug: program.slug }) }}">{{ 'see.program'|trans }}</a>
                             </div>
                             {% if is_granted("ROLE_ADMIN") %}
-                                <a href="{{ path('program_edit', { 'slug': program.slug} ) }}">Éditer</a>
+                                <a href="{{ path('program_edit', { 'slug': program.slug} ) }}">{{ 'edit'|trans}}</a>
                             {%endif%}
                         </div>
                     </div>
                 {% else %}
-                    Aucune série trouvée.
+                    {{ 'no.series'|trans}}
                 {% endfor %}
             </div>
-            <a class="btn btn-secondary" href="{{ path('app_index') }}">Retour à l'accueil</a>
+            <a class="btn btn-secondary" href="{{ path('app_index') }}">{{ 'back.menu'|trans }}</a>
         </div>
     </div>
 {% endblock %}

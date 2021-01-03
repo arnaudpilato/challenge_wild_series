@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Série #{{ program.id }} {% endblock %}
+{% block title %}{{'serie'|trans}} {{ program.id }} {% endblock %}
 
 {% block body %}
     <section>
@@ -13,29 +13,29 @@
                     <i id="watchlistIcon" class="{{ app.user.isInWatchlist(program) ? 'fas' : 'far' }} fa-heart watchlist" data-href="{{ path("program_watchlist", { id: program.id}) }}"></i>
                 </a>
                 {% endif %}
-                <p>Synopsis</p>
+                <p>{{ 'synopsis'|trans }}</p>
                 <ul>
                     <li>{{ program.summary }}</li>
                 </ul>
-                <p>Acteurs :</p>
+                <p>{{ 'actors'|trans }} :</p>
                 <ul>
                     {% for actor in program.actors %}
                         <li><a href="{{ path('actor_show', {id: actor.id}) }}">{{ actor.name }}</a></li>
                     {% else %}
-                        <li>Aucun acteur pour cette série</li>
+                        <li>{{ 'no.actors'|trans}}</li>
                     {% endfor %}
                 </ul>
-                <p>Catégorie :</p>
+                <p>{{ 'categorie'|trans }} :</p>
                 <ul>
                     <li>{{ program.category.name }}</li>
                 </ul>
                 <ul>
                     {% for season in seasons %}
-                        <li><a href="{{ path('program_season_show', {slug: program.slug, season: season.id}) }}">Saison {{ season.number }}</a></li>
+                        <li><a href="{{ path('program_season_show', {slug: program.slug, season: season.id}) }}">{{ 'season'|trans }} {{ season.number }}</a></li>
                     {% endfor %}
                 </ul>
 
-                <a class="btn btn-secondary" href="{{ path('program_index') }}">Retour à la liste des programmes</a>
+                <a class="btn btn-secondary" href="{{ path('program_index') }}">{{ 'back.list.programs'|trans}}</a>
             </div>
         </div>
     </section>

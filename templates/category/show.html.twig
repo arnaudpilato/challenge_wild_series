@@ -8,6 +8,6 @@
         <h2><a href="{{ path('program_show', {slug: program.slug}) }}">{{ program.title }}</a></h2>
         <p>{{ program.summary }}</p>
     {% else %}
-        Aucune série trouvée
+        {{ 'no.series'|trans }}
     {% endfor %}
 {% endblock %}

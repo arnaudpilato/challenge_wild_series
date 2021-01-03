@@ -2,14 +2,14 @@
 
 {% block body %}
     <section>
-        <h1>{{ program.title }} - Saison {{ season.id }} - Episode {{ episode.number }}</h1>
+        <h1>{{ program.title }} - {{ 'season|trans' }} {{ season.id }} - {{ 'episode'|trans }} {{ episode.number }}</h1>
         <h2>{{ episode.title }}</h2>
         <p>{{ episode.synopsis }}</p><br>
-        <h2>Commentaires</h2>
+        <h2>{{ 'comments'|trans }}</h2>
         {% for comment in episode.comments %}
-            <p>User : {{ comment.author.email }}</p>
-            <p>Note : {{ comment.rate }}/ 10</p>
-            <p>Commentaire : {{ comment.comment }}</p>
+            <p>{{ 'user'|trans }} : {{ comment.author.email }}</p>
+            <p>{{ 'note'|trans }} : {{ comment.rate }}/ 10</p>
+            <p>{{ 'comment'|trans }} : {{ comment.comment }}</p>
             {% if app.user %}
                 {% if is_granted("ROLE_ADMIN") or app.user.email == comment.author.email %}
                     {{ include('program/_delete_comment.html.twig') }}
@@ -18,10 +18,10 @@
             <hr>
         {% endfor %}
         {% if app.user %}
-            <h2>Laisser un commentaire</h2>
+            <h2>{{ 'let.comment'|trans }}</h2>
             {{ include('episode/_form.html.twig') }}
         {% endif %}
-        <a href="{{ path('program_season_show', {slug: program.slug, season: season.id}) }}">Retour sur la saison {{ season.id }}</a>
+        <a href="{{ path('program_season_show', {slug: program.slug, season: season.id}) }}">{{ 'back.season'|trans }} {{ season.id }}</a>
     </section>
 
 {% endblock %}

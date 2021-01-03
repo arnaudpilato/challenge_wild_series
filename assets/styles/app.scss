@@ -73,3 +73,7 @@ a {
     color: $secondary;
 }
 
+.flag-icon flag-icon-fr:before {
+    content: url("../images/france_flag.png");
+}
+

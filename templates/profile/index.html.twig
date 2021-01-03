@@ -2,6 +2,6 @@
 
 {% block body %}
     <section>
-        <h1>Bonjour {{ app.user.email }} !</h1>
+        <h1>{{ 'hello'|trans }} {{ app.user.email }} !</h1>
     </section>
 {% endblock %}
