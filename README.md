@@ -664,3 +664,28 @@ Critères de validation
 - La fonctionnalité est démontrée via une vidéo dont le lien est ajouté au README.md.
 
 https://www.loom.com/share/7177dc2fd73f47948de51e79e2f22e72
+
+# Challenge 25
+
+Rends ton site multilingue
+Tu dois faire en sorte que tes utilisateurs puissent sélectionner, depuis le menu, la langue qu’ils souhaitent voir affichée sur ton application.
+
+Au moins 2 choix de langues doivent être possibles :
+- FR : Français
+- EN : Anglais
+
+Libre à toi d'en ajouter d'autres si tu le souhaites
+
+- Les visiteurs arrivent sur l’accueil avec la langue désirée dans l'URL.
+- Les textes statiques doivent être traduits dans chaque langue (fais un petit effort sur l’anglais, et évite d’utiliser un traducteur automatique du type Google translate. C’est l’occasion de t’exercer un peu.).
+- Les liens internes de ton site doivent tenir compte de la langue de l’utilisateur.
+
+Critères de validation
+
+- Un menu déroulant permet de choisir entre - au minimum - anglais et français.
+- Le texte s’affiche différemment en fonction de la langue sélectionnée.
+- Toutes les URLs correspondent à localhost:8000/fr/suite_de_l_url, localhost:8000/en/suite_de_l_url, localhost:8000/xx/suite_de_l_url en fonction de la langue choisie.
+- Les routes /categories, /programs, /episode, /season et leurs variantes sont toutes disponibles.
+- Ton code est disponible sur Github sur le dépôt habituel.
+
+https://www.loom.com/share/91176788a5d1460894c87d77f8b5cc18
