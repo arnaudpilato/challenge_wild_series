@@ -689,3 +689,18 @@ Critères de validation
 - Ton code est disponible sur Github sur le dépôt habituel.
 
 https://www.loom.com/share/91176788a5d1460894c87d77f8b5cc18
+
+# Challenge 26
+
+Imbrique ton contrôleur
+En suivant les exemples de la documentation de Symfony Embedding Controllers, ajoute un dropdown Bootstrap à ta barre de navigation, affichant une liste de liens vers les catégories de ton Wild series. Cette liste devra donc bien s'afficher sur toutes les pages du site (puisqu'ils chargent tous la navbar).
+Pour cela, utilise une méthode de contrôleur qui n’aura pas de @Route et utilise la fonction twig render(controller())
+
+Critères de validation
+
+- La liste des catégories dans la navbar fonctionne
+- En cliquant sur une des catégories, j’accède bien aux séries liées
+- Le code est disponible sur un repository GitHub, avec une branche correspondant à cette quête.
+- Un lien vidéo est présent sur un fichier README.md à la racine du projet.
+
+https://www.loom.com/share/d1d767088dc640eebec6bd2a70fd7fb4
