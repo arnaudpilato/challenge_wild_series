@@ -704,3 +704,21 @@ Critères de validation
 - Un lien vidéo est présent sur un fichier README.md à la racine du projet.
 
 https://www.loom.com/share/d1d767088dc640eebec6bd2a70fd7fb4
+
+# Challenge 27
+
+Associer une image à une entité
+Maintenant que tu sais comment te servir de Vichuploader et que tes séries TV sont représentées par un poster, allons plus loin !
+À toi de permettre à l'administrateur d'également ajouter une photo à un acteur.
+
+Évidemment, les visuels que tu ajoutes en base doivent être visibles dans ton application sur les différentes pages qui affiches des séries et acteurs. À toi de modifier les vues en conséquences !
+
+Critères de validation
+
+- VichUploaderBundle est correctement configuré
+- L’ajout ainsi que l’update d’image fonctionnent parfaitement.
+- Tes images possèdent un nom unique.
+- Le code est disponible sur un repository GitHub, avec une branche correspondant à cette quête.
+- La fonctionnalité est démontrée via une vidéo dont le lien est ajouté au README.md
+
+https://www.loom.com/share/668ba9f28c8241ae9ac399285f2cc062
