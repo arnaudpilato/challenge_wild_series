@@ -20,7 +20,7 @@
                 {% for program in programs %}
                     <div class="movie col-5 d-flex">
                         <div class="poster col-6">
-                            <img class="poster" src="{{ program.poster }}">
+                            <img class="poster" src="{{ asset('uploads/' ~ program.poster) }}">
                         </div>
                         <div class="col-6">
                             <h2>{{ program.title }}</h2>

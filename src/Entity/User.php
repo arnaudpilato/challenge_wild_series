@@ -243,4 +243,9 @@ class User implements UserInterface
     {
         return $this->watchlist->contains($program);
     }
+
+    public function getIsVerified(): ?bool
+    {
+        return $this->isVerified;
+    }
 }

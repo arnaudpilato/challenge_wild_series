@@ -1,10 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>{{ actor.name }}</h1>
+    <h2>{{ 'actor'|trans }}  {{ actor.name }}:</h2>
+    <img class="poster" src="{{ asset('uploads/' ~ actor.pictureFile) }}" alt="{{ actor.name }} poster">
     <ul>
         {% for program in programs %}
-            <a href="{{ path('program_show', {slug: program.slug}) }}"><li>{{ program.title }}</li></a>
+            <a href="{{ path("program_show", { slug: program.slug }) }}" class="btn btn-secondary">retour
+            </a>
         {% endfor %}
     </ul>
 {% endblock %}

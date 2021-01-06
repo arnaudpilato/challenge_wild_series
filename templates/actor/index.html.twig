@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ 'List actor'|trans }} {% endblock %}
+
+{% block body %}
+    <h1>{{ 'List actor'|trans }}</h1>
+    {% for actor in actors %}
+        <img class="poster" src="{{ asset('uploads/' ~ actor.picture) }}" alt="{{ actor.name }} poster">
+        <p>{{ actor.name }}</p>
+    {% endfor %}
+{% endblock %}
